@@ -185,6 +185,16 @@ button:focus-visible { outline: 3px solid rgba(101, 88, 211, .3); outline-offset
   transition: border-color .2s, box-shadow .2s, opacity .2s;
 }
 
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.todo-text {
+  overflow-wrap: anywhere;
 .todo-item:hover {
   border-color: #d6d3f5;
   box-shadow: 0 6px 18px rgba(46, 48, 76, .07);
@@ -198,6 +208,14 @@ button:focus-visible { outline: 3px solid rgba(101, 88, 211, .3); outline-offset
   text-decoration-thickness: 1.5px;
 }
 
+.todo-time {
+  color: #777;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
 .actions { display: flex; flex: 0 0 auto; gap: 7px; }
 .actions button {
   min-height: 38px;
