@@ -3,21 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Todo Practice</title>
+  <meta name="theme-color" content="#f4f7fb">
+  <title>My Todo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <h1>Todo List</h1>
-    <p class="subtitle">GitHub共同編集の練習用</p>
+  <main class="app">
+    <header class="app-header">
+      <div class="title-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="eyebrow">MAKE TODAY COUNT</p>
+        <h1>My Todo</h1>
+        <p class="subtitle">今日やることを、すっきり整理。</p>
+      </div>
+    </header>
 
-    <div class="todo-form">
-      <input id="todoInput" type="text" placeholder="やることを入力">
-      <button id="addButton">追加</button>
-    </div>
+    <section class="input-section" aria-label="Todoを追加">
+      <label for="todoInput">新しいTodo</label>
+      <div class="todo-form">
+        <input id="todoInput" type="text" placeholder="例：資料を仕上げる" autocomplete="off" maxlength="120">
+        <button id="addButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          <span>追加</span>
+        </button>
+      </div>
+    </section>
 
-    <ul id="todoList"></ul>
-  </div>
+    <section class="list-section" aria-labelledby="listHeading">
+      <div class="list-header">
+        <h2 id="listHeading">Todo一覧</h2>
+        <p id="todoCount" aria-live="polite">0件</p>
+      </div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 6h10M8 12h10M8 18h6M4 6h.01M4 12h.01M4 18h.01"/></svg>
+        </div>
+        <p>まだTodoはありません</p>
+        <span>上の入力欄から、最初の予定を追加しましょう</span>
+      </div>
+      <ul id="todoList" aria-label="Todoリスト"></ul>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
